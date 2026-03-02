@@ -14,5 +14,5 @@
   },
   "files.readonlyInclude": {
     "**/routeTree.gen.ts": true
-  },
+  }
 }
