@@ -1,11 +1,11 @@
 import { HeadContent, Scripts, createRootRouteWithContext } from "@tanstack/react-router";
+import type { QueryClient } from "@tanstack/react-query";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import { TanStackDevtools } from "@tanstack/react-devtools";
 import { ReactQueryDevtoolsPanel } from "@tanstack/react-query-devtools";
 import appCss from "@/css/global.css?url";
 import fontsCss from "@/css/fonts.css?url";
-
-import type { QueryClient } from "@tanstack/react-query";
+import { SITE_TITLE } from "@/lib/consts";
 
 interface MyRouterContext {
   queryClient: QueryClient;
@@ -25,7 +25,7 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
         content: "width=device-width, initial-scale=1",
       },
       {
-        title: "TanStack Start Starter",
+        title: SITE_TITLE,
       },
     ],
     links: [
