@@ -3,6 +3,7 @@ import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import { TanStackDevtools } from "@tanstack/react-devtools";
 import { ReactQueryDevtoolsPanel } from "@tanstack/react-query-devtools";
 import appCss from "@/css/global.css?url";
+import fontsCss from "@/css/fonts.css?url";
 
 import type { QueryClient } from "@tanstack/react-query";
 
@@ -32,6 +33,10 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
         rel: "stylesheet",
         href: appCss,
       },
+      {
+        rel: "stylesheet",
+        href: fontsCss,
+      },
     ],
   }),
   shellComponent: RootDocument,
@@ -44,7 +49,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
         <HeadContent />
       </head>
-      <body className="font-sans wrap-anywhere antialiased selection:bg-[rgba(79,184,178,0.24)]">
+      <body>
         <div id="root">{children}</div>
         <TanStackDevtools
           config={{
