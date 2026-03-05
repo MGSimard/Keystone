@@ -6,6 +6,7 @@ import { ReactQueryDevtoolsPanel } from "@tanstack/react-query-devtools";
 import appCss from "@/css/global.css?url";
 import fontsCss from "@/css/fonts.css?url";
 import { SITE_TITLE } from "@/lib/consts";
+import { TooltipProvider } from "@/components/shadcnui/tooltip";
 
 interface MyRouterContext {
   queryClient: QueryClient;
@@ -50,7 +51,9 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
       <body>
-        <div id="root">{children}</div>
+        <TooltipProvider>
+          <div id="root">{children}</div>
+        </TooltipProvider>
         <TanStackDevtools
           config={{
             position: "bottom-right",
