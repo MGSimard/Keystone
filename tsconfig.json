@@ -10,8 +10,9 @@
 
     "paths": {
       // Specify a set of entries that re-map imports to additional lookup locations.
-      "#/*": ["./src/*"],
-      "@/*": ["./src/*"]
+      "#src/*": ["./src/*"], // Node subpath imports (package.json `imports`)
+      "@lambda/*": ["./src/lambda/*"], // Lambda shortcut
+      "@/*": ["./src/webapp/*"] // Web app shortcut
     },
 
     /* Bundler mode */

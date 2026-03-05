@@ -11,10 +11,15 @@ import { nitro } from "nitro/vite";
 const config = defineConfig({
   plugins: [
     devtools(),
-    nitro(),
+    nitro({
+      awsLambda: { streaming: true },
+      preset: "aws-lambda",
+    }),
     tsconfigPaths({ projects: ["./tsconfig.json"] }),
     tailwindcss(),
-    tanstackStart(),
+    tanstackStart({
+      srcDirectory: "src/webapp",
+    }),
     viteReact({
       babel: {
         plugins: ["babel-plugin-react-compiler"],

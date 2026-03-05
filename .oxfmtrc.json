@@ -8,7 +8,7 @@
   "trailingComma": "es5",
   "bracketSameLine": true,
   "experimentalTailwindcss": {
-    "stylesheet": "./src/css/global.css",
+    "stylesheet": "./src/webapp/css/global.css",
     "functions": ["clsx", "cn", "cva", "tw"]
   }
 }
