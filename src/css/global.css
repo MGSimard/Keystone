@@ -4,7 +4,7 @@
 
 @custom-variant dark (&:is(.dark *));
 
- /* UI Debug mode */
+/* UI Debug mode */
 /* * {
   outline: 1px solid rgba(255, 0, 0, 0.5) !important;
 } */
@@ -52,6 +52,11 @@
   --warning-foreground: var(--color-yellow-900);
   --invert: var(--color-zinc-900);
   --invert-foreground: var(--color-zinc-50);
+  /* Landing Page Tokens */
+  --landing-background: oklch(0.9568 0.0029 128.49);
+  --landing-foreground: oklch(0.141 0.005 285.823);
+  --landing-primary: oklch(0.6837 0.212 40.54);
+  --landing-primary-foreground: oklch(0.2179 0.0184 30.34);
 }
 
 .dark {
@@ -96,6 +101,11 @@
   --warning-foreground: var(--color-yellow-600);
   --invert: var(--color-zinc-700);
   --invert-foreground: var(--color-zinc-50);
+  /* Landing Page Tokens */
+  --landing-background: oklch(0.2192 0.0049 145.41);
+  --landing-foreground: oklch(1 0 0);
+  --landing-primary: oklch(0.6837 0.212 40.54);
+  --landing-primary-foreground: oklch(0.2179 0.0184 30.34);
 }
 
 @theme inline {
@@ -149,6 +159,11 @@
   --color-warning-foreground: var(--warning-foreground);
   --color-invert: var(--invert);
   --color-invert-foreground: var(--invert-foreground);
+  /* Landing Page Tokens */
+  --color-landing-background: var(--landing-background);
+  --color-landing-foreground: var(--landing-foreground);
+  --color-landing-primary: var(--landing-primary);
+  --color-landing-primary-foreground: var(--landing-primary-foreground);
 }
 
 @layer base {
@@ -157,6 +172,9 @@
   }
   html {
     @apply bg-background font-body text-foreground;
+    &:has([data-layout="landing"]) {
+      @apply bg-landing-background text-landing-foreground;
+    }
   }
   body {
     @apply bg-background font-body text-foreground;
@@ -165,6 +183,9 @@
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     line-height: 1.5;
+    &:has([data-layout="landing"]) {
+      @apply bg-landing-background text-landing-foreground;
+    }
   }
   #root {
     isolation: isolate;

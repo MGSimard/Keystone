@@ -7,12 +7,16 @@ export const Route = createFileRoute("/_landing")({
 });
 
 function LayoutLanding() {
+  // data-layout is for css :has() html/body background color override
+  // Cleaner than a wrapper div that would still expose site's bg color token
+  // on overscroll (esp safari), paint delays etc
+
   return (
     <>
-      <header className="font-mono">
+      <header className="font-mono" data-layout="landing">
         <nav className="flex items-center justify-between gap-4">
           <Link to="/">[ LOGO ]</Link>
-          <ul className="flex items-center gap-4 uppercase">
+          <ul className="flex items-center gap-4 uppercase [&_a]:hover:underline [&_a]:focus-visible:underline">
             <li>
               <Link to="/">FEATURES</Link>
             </li>
