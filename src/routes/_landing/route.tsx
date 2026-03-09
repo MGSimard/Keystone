@@ -8,22 +8,25 @@ export const Route = createFileRoute("/_landing")({
 function LayoutLanding() {
   return (
     <>
-      <header>
+      <header className="font-mono">
         <nav className="flex items-center justify-between gap-4">
-          <div>Landing Layout</div>
-          <ul className="flex items-center gap-4">
+          <Link to="/">[ LOGO ]</Link>
+          <ul className="flex items-center gap-4 uppercase">
             <li>
-              <Link to="/">Features</Link>
+              <Link to="/">FEATURES</Link>
             </li>
             <li>
-              <Link to="/">Pricing</Link>
+              <Link to="/">PRICING</Link>
             </li>
             <li>
-              <Link to="/">Contact</Link>
+              <Link to="/">CONTACT</Link>
+            </li>
+            <li>
+              <Button type="button">Theme Switcher (Light, Dark, System)</Button>
             </li>
             <li>
               <Button type="button" nativeButton={false} render={<Link to="/dashboard" />}>
-                Dashboard
+                ACCESS
               </Button>
             </li>
           </ul>
