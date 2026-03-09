@@ -6,7 +6,7 @@ const PARTNERS = [
   { name: "Linear", icon: IconLinear },
 ] as const;
 
-/* Squared/dither disintegration: pixelate → thresholded noise mask → dissolve */
+// Meh TODO will figure out if I want a brutalist ticker or a dotted ticker
 
 export function PartnersTicker() {
   return (
