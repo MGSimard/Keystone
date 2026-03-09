@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { PartnersTicker } from "@/components/landing/PartnersTicker";
 
 export const Route = createFileRoute("/_landing/")({
   component: PageHome,
@@ -93,7 +94,7 @@ function HeroSection() {
           <button type="button">Secondary CTA</button>
         </div>
       </div>
-      <div className="flex h-24 items-center overflow-hidden bg-yellow-500"></div>
+      <PartnersTicker />
     </section>
   );
 }

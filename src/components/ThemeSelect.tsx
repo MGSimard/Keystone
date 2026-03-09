@@ -18,7 +18,7 @@ export function ThemeSelect() {
         type="button"
         size="icon"
         variant="ghost"
-        className="[grid-template-areas:'stack' grid place-items-center"
+        className="grid place-items-center [grid-template-areas:'stack']"
         onClick={handleToggle}>
         <IconMoonFilled
           className={cn(
