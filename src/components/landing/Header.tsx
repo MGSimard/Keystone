@@ -20,11 +20,11 @@ export function Header() {
       <div ref={refCallback} className="h-px" aria-hidden />
       <header
         className={cn(
-          "fixed inset-x-0 top-0 z-10 transition-colors duration-150",
+          "fixed inset-x-0 top-0 z-10 px-4 transition-colors duration-150",
           isScrolled && "bg-landing-background"
         )}>
         <nav className="flex h-16 items-center justify-between gap-4">
-          <Link to="/">[ LOGO ]</Link>
+          <Link to="/">LOGO</Link>
           <ul className="flex items-center gap-4 uppercase [&_a]:hover:underline [&_a]:focus-visible:underline">
             <li>
               <Link to="/">FEATURES</Link>
