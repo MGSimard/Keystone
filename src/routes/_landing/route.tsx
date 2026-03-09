@@ -1,4 +1,5 @@
 import { Link, Outlet, createFileRoute } from "@tanstack/react-router";
+import { ThemeSelect } from "@/components/ThemeSelect";
 import { Button } from "@/components/shadcnui/button";
 
 export const Route = createFileRoute("/_landing")({
@@ -22,7 +23,7 @@ function LayoutLanding() {
               <Link to="/">CONTACT</Link>
             </li>
             <li>
-              <Button type="button">Theme Switcher (Light, Dark, System)</Button>
+              <ThemeSelect />
             </li>
             <li>
               <Button type="button" nativeButton={false} render={<Link to="/dashboard" />}>
