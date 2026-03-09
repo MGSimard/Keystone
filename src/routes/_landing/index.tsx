@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { FragmentedGradient } from "@/components/landing/FragmentedGradient";
 import { PartnersTicker } from "@/components/landing/PartnersTicker";
 
 export const Route = createFileRoute("/_landing/")({
@@ -57,15 +58,9 @@ function PageHome() {
   return (
     <>
       <HeroSection />
-      <section>
-        <h2>Partners Section</h2>
-      </section>
-      <section>
-        <h2>Benefits Section</h2>
-      </section>
-      <section>
-        <h2>How It Works Section</h2>
-      </section>
+      <FragmentedGradient />
+      <BenefitsSection />
+      <HowItWorksSection />
       <section>
         <h2>Pricing Section</h2>
       </section>
@@ -84,7 +79,7 @@ function PageHome() {
 
 function HeroSection() {
   return (
-    <section className="flex min-h-dvh flex-col justify-between pt-16">
+    <section className="relative flex min-h-dvh flex-col justify-between pt-16">
       <div className="flex flex-1 flex-col items-center justify-center">
         <div>Some boxed label here</div>
         <h1>Hero Section</h1>
@@ -95,6 +90,26 @@ function HeroSection() {
         </div>
       </div>
       <PartnersTicker />
+    </section>
+  );
+}
+
+// TODO: scroll offset to account for fixed header when visiting anchor links
+function BenefitsSection() {
+  return (
+    <section id="benefits" className="px-4 py-8">
+      <span className="mb-2 bg-landing-primary px-2 py-0.5 font-mono text-landing-background tabular-nums">01</span>
+      <h2 className="indent-[-0.05em] text-7xl font-bold tracking-tighter text-landing-primary">SOLVING [REDACTED]</h2>
+      <p>Focus on how it helps user instead of what features it has</p>
+    </section>
+  );
+}
+
+function HowItWorksSection() {
+  return (
+    <section>
+      <h2>How It Works Section</h2>
+      <p>Explain how to get started in 3 simple steps</p>
     </section>
   );
 }
