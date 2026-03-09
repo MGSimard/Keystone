@@ -71,9 +71,10 @@ export function ThemeProvider({ children, defaultTheme = "system", storageKey = 
 
   useEffect(() => {
     const root = document.documentElement;
+    root.setAttribute("data-theme-preference", theme);
     root.classList.toggle("dark", resolvedTheme === "dark");
     root.style.colorScheme = resolvedTheme;
-  }, [resolvedTheme]);
+  }, [theme, resolvedTheme]);
 
   useEffect(() => {
     const handleStorageChange = (e: StorageEvent) => {

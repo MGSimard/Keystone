@@ -17,7 +17,7 @@ export function Header() {
 
   return (
     <>
-      <div ref={refCallback} className="h-px" aria-hidden />
+      <div ref={refCallback} className="pointer-events-none h-px select-none" aria-hidden />
       <header
         className={cn(
           "fixed inset-x-0 top-0 z-10 px-4 transition-colors duration-150",
@@ -39,7 +39,7 @@ export function Header() {
               <ThemeSelect />
             </li>
             <li>
-              <Button type="button" nativeButton={false} render={<Link to="/dashboard" />}>
+              <Button type="button" variant="outline" nativeButton={false} render={<Link to="/dashboard" />}>
                 ACCESS
               </Button>
             </li>

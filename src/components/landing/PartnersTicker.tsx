@@ -26,7 +26,7 @@ export function PartnersTicker() {
     <div
       className="overflow-hidden bg-landing-primary"
       style={{ "--ticker-copies": TICKER_COPIES, "--ticker-duration": TICKER_DURATION } as React.CSSProperties}>
-      <div className="animate-ticker flex h-24 w-max shrink-0 items-center gap-32 py-8 will-change-transform *:h-full *:shrink-0 **:fill-landing-primary-foreground">
+      <div className="animate-ticker flex w-max items-center gap-32 py-8 *:h-8 *:shrink-0 **:fill-landing-background">
         {Array.from({ length: TICKER_COPIES }, (_, i) =>
           PARTNERS.map((partner) => {
             const Icon = partner.icon;

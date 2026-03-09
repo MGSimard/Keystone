@@ -247,6 +247,16 @@
   }
 }
 
+/* Theme icon visibility - CSS-only, no hydration mismatch */
+[data-theme-preference="light"] [data-theme-icon="dark"],
+[data-theme-preference="light"] [data-theme-icon="system"],
+[data-theme-preference="dark"] [data-theme-icon="light"],
+[data-theme-preference="dark"] [data-theme-icon="system"],
+[data-theme-preference="system"] [data-theme-icon="light"],
+[data-theme-preference="system"] [data-theme-icon="dark"] {
+  display: none;
+}
+
 /* Disable transitions during theme changes */
 [data-disable-transitions],
 [data-disable-transitions]::before,

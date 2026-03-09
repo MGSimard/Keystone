@@ -85,7 +85,6 @@ export function FragmentedGradient({ rows = 24, cols = 120, className = "" }: Fr
     };
 
     const primary = "var(--landing-primary)";
-    const secondary = "var(--landing-background)";
 
     switch (type) {
       case "colored-bg-no-dot":
@@ -102,7 +101,7 @@ export function FragmentedGradient({ rows = 24, cols = 120, className = "" }: Fr
               style={{
                 width: dotSizes.large,
                 aspectRatio: 1,
-                backgroundColor: secondary,
+                backgroundColor: "var(--landing-background)",
               }}
             />
           </div>
@@ -119,7 +118,7 @@ export function FragmentedGradient({ rows = 24, cols = 120, className = "" }: Fr
               style={{
                 width: dotSizes.medium,
                 aspectRatio: 1,
-                backgroundColor: secondary,
+                backgroundColor: "var(--landing-background)",
               }}
             />
           </div>
@@ -136,7 +135,7 @@ export function FragmentedGradient({ rows = 24, cols = 120, className = "" }: Fr
               style={{
                 width: dotSizes.small,
                 aspectRatio: 1,
-                backgroundColor: secondary,
+                backgroundColor: "var(--landing-background)",
               }}
             />
           </div>
@@ -147,7 +146,7 @@ export function FragmentedGradient({ rows = 24, cols = 120, className = "" }: Fr
           <div
             key={key}
             className="flex items-center justify-center"
-            style={{ ...baseStyle, backgroundColor: secondary }}>
+            style={{ ...baseStyle, backgroundColor: "transparent" }}>
             <div
               className="shrink-0 rounded-full"
               style={{
@@ -164,7 +163,7 @@ export function FragmentedGradient({ rows = 24, cols = 120, className = "" }: Fr
           <div
             key={key}
             className="flex items-center justify-center"
-            style={{ ...baseStyle, backgroundColor: secondary }}>
+            style={{ ...baseStyle, backgroundColor: "transparent" }}>
             <div
               className="shrink-0 rounded-full"
               style={{
@@ -181,7 +180,7 @@ export function FragmentedGradient({ rows = 24, cols = 120, className = "" }: Fr
           <div
             key={key}
             className="flex items-center justify-center"
-            style={{ ...baseStyle, backgroundColor: secondary }}>
+            style={{ ...baseStyle, backgroundColor: "transparent" }}>
             <div
               className="shrink-0 rounded-full"
               style={{
@@ -195,20 +194,19 @@ export function FragmentedGradient({ rows = 24, cols = 120, className = "" }: Fr
 
       case "transparent-bg-no-dot":
       default:
-        return <div key={key} style={{ ...baseStyle, backgroundColor: secondary }} />;
+        return <div key={key} style={{ ...baseStyle, backgroundColor: "transparent" }} />;
     }
   };
 
   return (
     <div
       className={`pointer-events-none w-full overflow-hidden ${className}`}
-      style={{
-        aspectRatio: `${cols} / ${rows}`,
-        display: "grid",
-        gridTemplateColumns: `repeat(${cols}, 1fr)`,
-        gridTemplateRows: `repeat(${rows}, 1fr)`,
-        backgroundColor: "var(--landing-background)",
-      }}
+        style={{
+          aspectRatio: `${cols} / ${rows}`,
+          display: "grid",
+          gridTemplateColumns: `repeat(${cols}, 1fr)`,
+          gridTemplateRows: `repeat(${rows}, 1fr)`,
+        }}
       aria-hidden>
       {tiles.map((row, rowIndex) => row.map((tile, colIndex) => renderTile(tile, rowIndex, colIndex)))}
     </div>

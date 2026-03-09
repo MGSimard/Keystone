@@ -1,48 +1,41 @@
 import { useTheme } from "@/components/ThemeProvider";
-import { IconBrightnessDown, IconDeviceDesktop, IconMoonFilled } from "@tabler/icons-react";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/shadcnui/tooltip";
 import { Button } from "@/components/shadcnui/button";
-import { cn } from "#/lib/utils";
+import { IconBrightnessDown, IconDeviceDesktop, IconMoonFilled } from "@tabler/icons-react";
+
+const NEXT_THEME = {
+  light: "dark",
+  dark: "system",
+  system: "light",
+} as const;
 
 export function ThemeSelect() {
-  const { theme, resolvedTheme, setTheme } = useTheme();
-
-  const handleToggle = () => {
-    setTheme(resolvedTheme === "dark" ? "light" : "dark");
-  };
-
-  // TOD: Style
+  const { theme, setTheme } = useTheme();
 
   return (
-    <div className="flex gap-2" role="group" aria-label={`Current theme:  ${resolvedTheme}`}>
-      <Button
-        type="button"
-        size="icon"
-        variant="ghost"
-        className="grid place-items-center [grid-template-areas:'stack']"
-        onClick={handleToggle}>
-        <IconMoonFilled
-          className={cn(
-            `[clip-path:polygon(0_0,100%_0,0_100%)] [grid-area:stack]`,
-            resolvedTheme === "light" && "text-muted"
-          )}
-        />
-        <IconBrightnessDown
-          className={cn(
-            `[clip-path:polygon(0_100%,100%_0,100%_100%)] [grid-area:stack]`,
-            resolvedTheme === "dark" && "text-muted"
-          )}
-        />
-      </Button>
-
-      <Button
-        type="button"
-        size="icon"
-        variant="ghost"
-        aria-pressed={theme === "system"}
-        aria-label="System"
-        onClick={() => setTheme("system")}>
-        <IconDeviceDesktop />
-      </Button>
-    </div>
+    <Tooltip
+      disableHoverablePopup
+      onOpenChange={(_open, eventDetails) => {
+        if (eventDetails.reason === "trigger-press") {
+          eventDetails.cancel();
+        }
+      }}>
+      <TooltipTrigger
+        render={
+          <Button type="button" size="icon" variant="ghost" onClick={() => setTheme(NEXT_THEME[theme])}>
+            <span className="grid [grid-template-areas:'stack']">
+              <IconBrightnessDown data-theme-icon="light" className="[grid-area:stack]" />
+              <IconMoonFilled data-theme-icon="dark" className="[grid-area:stack]" />
+              <IconDeviceDesktop data-theme-icon="system" className="[grid-area:stack]" />
+            </span>
+          </Button>
+        }
+      />
+      <TooltipContent>
+        <p className="font-mono">
+          SWITCH THEME (<span className="capitalize">{theme}</span>)
+        </p>
+      </TooltipContent>
+    </Tooltip>
   );
 }
