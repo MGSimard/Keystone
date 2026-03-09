@@ -10,7 +10,11 @@ type TileType =
   | "transparent-bg-no-dot"
   | "colored-bg-no-dot";
 
-//TODO Potentially replace with svg file w/ x-repeat
+// TODO Potentially replace with svg file w/ x-repeat
+// NOTES if I do that:
+// Use some kind of clamping - fit bg svg image to 100vw
+// But under some circumstances allow horizontal tiling in units of full image widths?
+// Would prevent any kind of cut-off edges that don't directly match the end of a column
 
 interface FragmentedGradientProps {
   rows?: number;
@@ -201,12 +205,12 @@ export function FragmentedGradient({ rows = 24, cols = 120, className = "" }: Fr
   return (
     <div
       className={`pointer-events-none w-full overflow-hidden ${className}`}
-        style={{
-          aspectRatio: `${cols} / ${rows}`,
-          display: "grid",
-          gridTemplateColumns: `repeat(${cols}, 1fr)`,
-          gridTemplateRows: `repeat(${rows}, 1fr)`,
-        }}
+      style={{
+        aspectRatio: `${cols} / ${rows}`,
+        display: "grid",
+        gridTemplateColumns: `repeat(${cols}, 1fr)`,
+        gridTemplateRows: `repeat(${rows}, 1fr)`,
+      }}
       aria-hidden>
       {tiles.map((row, rowIndex) => row.map((tile, colIndex) => renderTile(tile, rowIndex, colIndex)))}
     </div>
