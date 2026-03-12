@@ -61,18 +61,10 @@ function PageHome() {
       <FragmentedGradient />
       <BenefitsSection />
       <HowItWorksSection />
-      <section>
-        <h2>Pricing Section</h2>
-      </section>
-      <section>
-        <h2>Testimonials Section</h2>
-      </section>
-      <section>
-        <h2>FAQ Section</h2>
-      </section>
-      <section>
-        <h2>CTA Section</h2>
-      </section>
+      <PricingSection />
+      <TestimonialsSection />
+      <FAQSection />
+      <CTASection />
     </>
   );
 }
@@ -108,9 +100,60 @@ function BenefitsSection() {
 
 function HowItWorksSection() {
   return (
-    <section>
-      <h2>How It Works Section</h2>
-      <p>Explain how to get started in 3 simple steps</p>
+    <section id="how-it-works" className="grid grid-cols-2 bg-landing-primary px-4 py-8">
+      <div>
+        <span className="mb-2 bg-landing-background px-2 py-0.5 font-mono text-landing-primary tabular-nums">02</span>
+        <h2 className="indent-[-0.05em] text-7xl font-bold tracking-tighter text-landing-background">
+          HOW IT WORKS SECTION
+        </h2>
+        <p>Explain how to get started in 3 simple steps</p>
+      </div>
+      <ol className="grid">
+        <li>
+          <h3>Step 1</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+        </li>
+        <li>
+          <h3>Step 2</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+        </li>
+        <li>
+          <h3>Step 3</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+        </li>
+      </ol>
+    </section>
+  );
+}
+
+function PricingSection() {
+  return (
+    <section id="pricing">
+      <h2>Pricing Section</h2>
+    </section>
+  );
+}
+
+function TestimonialsSection() {
+  return (
+    <section id="testimonials">
+      <h2>Testimonials Section</h2>
+    </section>
+  );
+}
+
+function FAQSection() {
+  return (
+    <section id="faq">
+      <h2>FAQ Section</h2>
+    </section>
+  );
+}
+
+function CTASection() {
+  return (
+    <section id="cta">
+      <h2>CTA Section</h2>
     </section>
   );
 }
