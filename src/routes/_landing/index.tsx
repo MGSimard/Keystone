@@ -74,7 +74,7 @@ function HeroSection() {
     <section className="relative flex min-h-dvh flex-col justify-between pt-16">
       <div className="px-6 py-16 md:px-8">
         <span
-          className="absolute top-4 left-4 -z-1 font-pixel-line text-[clamp(2rem,10vw,10rem)] opacity-20"
+          className="pointer-events-none absolute top-4 left-4 -z-1 font-pixel-line text-[clamp(2rem,10vw,10rem)] opacity-20 select-none"
           aria-hidden>
           NAME
         </span>
