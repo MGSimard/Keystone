@@ -14,7 +14,7 @@ import {
 } from "@/components/shadcnui/sidebar";
 import { SidebarSwitcher } from "@/components/dashboard/SidebarSwitcher";
 import { SidebarUser } from "@/components/dashboard/SidebarUser";
-import { IconUsers, IconLogs, IconDashboard, IconSettings } from "@tabler/icons-react";
+import { IconUsers, IconLogs, IconDashboard, IconSettings, IconLifebuoy } from "@tabler/icons-react";
 
 const LINKS = {
   platform: {
@@ -48,6 +48,13 @@ const LINKS = {
       },
     ],
   },
+  utility: [
+    {
+      name: "Support",
+      url: "#",
+      icon: <IconLifebuoy />,
+    },
+  ],
 };
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
@@ -84,6 +91,20 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           <SidebarGroupContent>
             <SidebarMenu>
               {LINKS.management.items.map((item) => (
+                <SidebarMenuItem key={item.name}>
+                  <SidebarMenuButton render={<Link to={item.url} activeProps={{ "data-active": true }} />}>
+                    {item.icon}
+                    <span>{item.name}</span>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              ))}
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+        <SidebarGroup className="mt-auto">
+          <SidebarGroupContent>
+            <SidebarMenu>
+              {LINKS.utility.map((item) => (
                 <SidebarMenuItem key={item.name}>
                   <SidebarMenuButton render={<Link to={item.url} activeProps={{ "data-active": true }} />}>
                     {item.icon}
