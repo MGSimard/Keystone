@@ -10,20 +10,30 @@ import {
   DropdownMenuTrigger,
 } from "@/components/shadcnui/dropdown-menu";
 import { SidebarMenu, SidebarMenuButton, SidebarMenuItem, useSidebar } from "@/components/shadcnui/sidebar";
-import { IconSelector, IconPlus } from "@tabler/icons-react";
+import { IconSelector, IconPlus, IconCommand, IconWaveSine, IconLayoutRows } from "@tabler/icons-react";
 
-export function SidebarSwitcher({
-  teams,
-}: {
-  teams: Array<{
-    name: string;
-    logo: React.ReactNode;
-    plan: string;
-  }>;
-}) {
+const orgs = [
+  {
+    name: "Acme Inc",
+    logo: <IconLayoutRows />,
+    plan: "Enterprise",
+  },
+  {
+    name: "Acme Corp.",
+    logo: <IconWaveSine />,
+    plan: "Startup",
+  },
+  {
+    name: "Evil Corp.",
+    logo: <IconCommand />,
+    plan: "Free",
+  },
+];
+
+export function SidebarSwitcher() {
   const { isMobile } = useSidebar();
-  const [activeTeam, setActiveTeam] = useState(teams[0]);
-  if (!activeTeam) {
+  const [activeOrg, setActiveOrg] = useState(orgs[0]);
+  if (!activeOrg) {
     return null;
   }
   return (
@@ -38,11 +48,11 @@ export function SidebarSwitcher({
               />
             }>
             <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
-              {activeTeam.logo}
+              {activeOrg.logo}
             </div>
             <div className="grid flex-1 text-left text-sm leading-tight">
-              <span className="truncate font-medium">{activeTeam.name}</span>
-              <span className="truncate text-xs">{activeTeam.plan}</span>
+              <span className="truncate font-medium">{activeOrg.name}</span>
+              <span className="truncate text-xs">{activeOrg.plan}</span>
             </div>
             <IconSelector className="ml-auto" />
           </DropdownMenuTrigger>
@@ -53,10 +63,10 @@ export function SidebarSwitcher({
             sideOffset={4}>
             <DropdownMenuGroup>
               <DropdownMenuLabel className="text-xs text-muted-foreground">Teams</DropdownMenuLabel>
-              {teams.map((team, index) => (
-                <DropdownMenuItem key={team.name} onClick={() => setActiveTeam(team)} className="gap-2 p-2">
-                  <div className="flex size-6 items-center justify-center rounded-md border">{team.logo}</div>
-                  {team.name}
+              {orgs.map((org, index) => (
+                <DropdownMenuItem key={org.name} onClick={() => setActiveOrg(org)} className="gap-2 p-2">
+                  <div className="flex size-6 items-center justify-center rounded-md border">{org.logo}</div>
+                  {org.name}
                   <DropdownMenuShortcut>⌘{index + 1}</DropdownMenuShortcut>
                 </DropdownMenuItem>
               ))}

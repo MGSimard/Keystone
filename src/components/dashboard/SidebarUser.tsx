@@ -20,15 +20,13 @@ import {
   IconLogout,
 } from "@tabler/icons-react";
 
-export function SidebarUser({
-  user,
-}: {
-  user: {
-    name: string;
-    email: string;
-    avatar: string;
-  };
-}) {
+const user = {
+  name: "MGSimard",
+  email: "mgsimard.dev@gmail.com",
+  avatar: "/avatars/shadcn.jpg",
+};
+
+export function SidebarUser() {
   const { isMobile } = useSidebar();
   return (
     <SidebarMenu>
@@ -37,7 +35,7 @@ export function SidebarUser({
           <DropdownMenuTrigger render={<SidebarMenuButton size="lg" className="aria-expanded:bg-muted" />}>
             <Avatar>
               <AvatarImage src={user.avatar} alt={user.name} />
-              <AvatarFallback>CN</AvatarFallback>
+              <AvatarFallback>{user.name.charAt(0)}</AvatarFallback>
             </Avatar>
             <div className="grid flex-1 text-left text-sm leading-tight">
               <span className="truncate font-medium">{user.name}</span>
@@ -55,7 +53,7 @@ export function SidebarUser({
                 <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
                   <Avatar>
                     <AvatarImage src={user.avatar} alt={user.name} />
-                    <AvatarFallback>CN</AvatarFallback>
+                    <AvatarFallback>{user.name.charAt(0)}</AvatarFallback>
                   </Avatar>
                   <div className="grid flex-1 text-left text-sm leading-tight">
                     <span className="truncate font-medium">{user.name}</span>

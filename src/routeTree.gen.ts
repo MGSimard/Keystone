@@ -14,6 +14,9 @@ import { Route as LandingRouteRouteImport } from './routes/_landing/route'
 import { Route as DashboardIndexRouteImport } from './routes/dashboard/index'
 import { Route as LandingIndexRouteImport } from './routes/_landing/index'
 import { Route as LandingPricingRouteImport } from './routes/_landing/pricing'
+import { Route as DashboardTeamIndexRouteImport } from './routes/dashboard/team/index'
+import { Route as DashboardSettingsIndexRouteImport } from './routes/dashboard/settings/index'
+import { Route as DashboardAuditLogsIndexRouteImport } from './routes/dashboard/audit-logs/index'
 
 const DashboardRouteRoute = DashboardRouteRouteImport.update({
   id: '/dashboard',
@@ -39,17 +42,38 @@ const LandingPricingRoute = LandingPricingRouteImport.update({
   path: '/pricing',
   getParentRoute: () => LandingRouteRoute,
 } as any)
+const DashboardTeamIndexRoute = DashboardTeamIndexRouteImport.update({
+  id: '/team/',
+  path: '/team/',
+  getParentRoute: () => DashboardRouteRoute,
+} as any)
+const DashboardSettingsIndexRoute = DashboardSettingsIndexRouteImport.update({
+  id: '/settings/',
+  path: '/settings/',
+  getParentRoute: () => DashboardRouteRoute,
+} as any)
+const DashboardAuditLogsIndexRoute = DashboardAuditLogsIndexRouteImport.update({
+  id: '/audit-logs/',
+  path: '/audit-logs/',
+  getParentRoute: () => DashboardRouteRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof LandingIndexRoute
   '/dashboard': typeof DashboardRouteRouteWithChildren
   '/pricing': typeof LandingPricingRoute
   '/dashboard/': typeof DashboardIndexRoute
+  '/dashboard/audit-logs/': typeof DashboardAuditLogsIndexRoute
+  '/dashboard/settings/': typeof DashboardSettingsIndexRoute
+  '/dashboard/team/': typeof DashboardTeamIndexRoute
 }
 export interface FileRoutesByTo {
   '/pricing': typeof LandingPricingRoute
   '/': typeof LandingIndexRoute
   '/dashboard': typeof DashboardIndexRoute
+  '/dashboard/audit-logs': typeof DashboardAuditLogsIndexRoute
+  '/dashboard/settings': typeof DashboardSettingsIndexRoute
+  '/dashboard/team': typeof DashboardTeamIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -58,12 +82,28 @@ export interface FileRoutesById {
   '/_landing/pricing': typeof LandingPricingRoute
   '/_landing/': typeof LandingIndexRoute
   '/dashboard/': typeof DashboardIndexRoute
+  '/dashboard/audit-logs/': typeof DashboardAuditLogsIndexRoute
+  '/dashboard/settings/': typeof DashboardSettingsIndexRoute
+  '/dashboard/team/': typeof DashboardTeamIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/dashboard' | '/pricing' | '/dashboard/'
+  fullPaths:
+    | '/'
+    | '/dashboard'
+    | '/pricing'
+    | '/dashboard/'
+    | '/dashboard/audit-logs/'
+    | '/dashboard/settings/'
+    | '/dashboard/team/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/pricing' | '/' | '/dashboard'
+  to:
+    | '/pricing'
+    | '/'
+    | '/dashboard'
+    | '/dashboard/audit-logs'
+    | '/dashboard/settings'
+    | '/dashboard/team'
   id:
     | '__root__'
     | '/_landing'
@@ -71,6 +111,9 @@ export interface FileRouteTypes {
     | '/_landing/pricing'
     | '/_landing/'
     | '/dashboard/'
+    | '/dashboard/audit-logs/'
+    | '/dashboard/settings/'
+    | '/dashboard/team/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -115,6 +158,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LandingPricingRouteImport
       parentRoute: typeof LandingRouteRoute
     }
+    '/dashboard/team/': {
+      id: '/dashboard/team/'
+      path: '/team'
+      fullPath: '/dashboard/team/'
+      preLoaderRoute: typeof DashboardTeamIndexRouteImport
+      parentRoute: typeof DashboardRouteRoute
+    }
+    '/dashboard/settings/': {
+      id: '/dashboard/settings/'
+      path: '/settings'
+      fullPath: '/dashboard/settings/'
+      preLoaderRoute: typeof DashboardSettingsIndexRouteImport
+      parentRoute: typeof DashboardRouteRoute
+    }
+    '/dashboard/audit-logs/': {
+      id: '/dashboard/audit-logs/'
+      path: '/audit-logs'
+      fullPath: '/dashboard/audit-logs/'
+      preLoaderRoute: typeof DashboardAuditLogsIndexRouteImport
+      parentRoute: typeof DashboardRouteRoute
+    }
   }
 }
 
@@ -134,10 +198,16 @@ const LandingRouteRouteWithChildren = LandingRouteRoute._addFileChildren(
 
 interface DashboardRouteRouteChildren {
   DashboardIndexRoute: typeof DashboardIndexRoute
+  DashboardAuditLogsIndexRoute: typeof DashboardAuditLogsIndexRoute
+  DashboardSettingsIndexRoute: typeof DashboardSettingsIndexRoute
+  DashboardTeamIndexRoute: typeof DashboardTeamIndexRoute
 }
 
 const DashboardRouteRouteChildren: DashboardRouteRouteChildren = {
   DashboardIndexRoute: DashboardIndexRoute,
+  DashboardAuditLogsIndexRoute: DashboardAuditLogsIndexRoute,
+  DashboardSettingsIndexRoute: DashboardSettingsIndexRoute,
+  DashboardTeamIndexRoute: DashboardTeamIndexRoute,
 }
 
 const DashboardRouteRouteWithChildren = DashboardRouteRoute._addFileChildren(
