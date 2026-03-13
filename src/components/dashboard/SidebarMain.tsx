@@ -48,13 +48,6 @@ const LINKS = {
       },
     ],
   },
-  utility: [
-    {
-      name: "Support",
-      url: "#",
-      icon: <IconLifebuoy />,
-    },
-  ],
 };
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
@@ -91,20 +84,6 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           <SidebarGroupContent>
             <SidebarMenu>
               {LINKS.management.items.map((item) => (
-                <SidebarMenuItem key={item.name}>
-                  <SidebarMenuButton render={<Link to={item.url} activeProps={{ "data-active": true }} />}>
-                    {item.icon}
-                    <span>{item.name}</span>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
-            </SidebarMenu>
-          </SidebarGroupContent>
-        </SidebarGroup>
-        <SidebarGroup className="mt-auto">
-          <SidebarGroupContent>
-            <SidebarMenu>
-              {LINKS.utility.map((item) => (
                 <SidebarMenuItem key={item.name}>
                   <SidebarMenuButton render={<Link to={item.url} activeProps={{ "data-active": true }} />}>
                     {item.icon}
