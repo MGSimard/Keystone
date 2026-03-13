@@ -62,7 +62,7 @@ export function SidebarSwitcher() {
             side={isMobile ? "bottom" : "right"}
             sideOffset={4}>
             <DropdownMenuGroup>
-              <DropdownMenuLabel className="text-xs text-muted-foreground">Teams</DropdownMenuLabel>
+              <DropdownMenuLabel className="text-xs text-muted-foreground">Organizations</DropdownMenuLabel>
               {orgs.map((org, index) => (
                 <DropdownMenuItem key={org.name} onClick={() => setActiveOrg(org)} className="gap-2 p-2">
                   <div className="flex size-6 items-center justify-center rounded-md border">{org.logo}</div>
@@ -77,7 +77,7 @@ export function SidebarSwitcher() {
                 <div className="flex size-6 items-center justify-center rounded-md border bg-transparent">
                   <IconPlus className="size-4" />
                 </div>
-                <div className="font-medium text-muted-foreground">Add team</div>
+                <div className="font-medium text-muted-foreground">Add</div>
               </DropdownMenuItem>
             </DropdownMenuGroup>
           </DropdownMenuContent>
