@@ -110,7 +110,7 @@ function HeroSection() {
 // TODO: scroll offset to account for fixed header when visiting anchor links
 function BenefitsSection() {
   return (
-    <Section id="benefits" className="px-4 py-8">
+    <Section id="benefits">
       <span className="mb-2 bg-landing-primary px-2 py-0.5 font-mono text-landing-background tabular-nums">01</span>
       <h2 className="indent-[-0.05em] text-7xl font-bold tracking-tighter text-landing-primary">SOLVING [REDACTED]</h2>
       <p>Focus on how it helps user instead of what features it has</p>
