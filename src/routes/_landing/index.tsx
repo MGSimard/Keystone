@@ -107,7 +107,6 @@ function HeroSection() {
   );
 }
 
-// TODO: scroll offset to account for fixed header when visiting anchor links
 function BenefitsSection() {
   return (
     <Section id="benefits">
