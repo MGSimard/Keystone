@@ -102,8 +102,7 @@ function HeroSection() {
             </div>
           </div>
         </div>
-        <div className="relative h-full self-stretch opacity-50 xl:opacity-100">
-          {/* <div className="absolute inset-0 grid place-items-center font-pixel-line text-7xl opacity-20">COMPANY</div> */}
+        <div className="h-full self-stretch opacity-50 xl:opacity-100">
           <video
             autoPlay
             loop
