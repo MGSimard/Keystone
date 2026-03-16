@@ -73,8 +73,8 @@ function PageHome() {
 function HeroSection() {
   return (
     <section className="flex min-h-dvh flex-col">
-      <div className="grid grow grid-cols-1 items-center [grid-template-areas:'stack'] *:[grid-area:stack] xl:grid-cols-[minmax(0,4fr)_minmax(0,6fr)] *:xl:[grid-area:unset]">
-        <div className="z-1 space-y-16 px-12 py-32 text-center md:px-16 xl:text-start">
+      <div className="grid grow grid-cols-1 grid-rows-1 items-stretch [grid-template-areas:'stack'] *:[grid-area:stack] xl:grid-cols-[minmax(0,4fr)_minmax(0,6fr)] *:xl:[grid-area:unset]">
+        <div className="z-1 space-y-16 self-center px-12 py-32 text-center md:px-16 xl:text-start">
           <div>
             <span className="mx-auto mb-2 block w-fit bg-landing-primary px-2 py-0.5 font-mono text-landing-background xl:mx-0 *:xl:text-shadow-none">
               TAG LABEL
@@ -102,14 +102,14 @@ function HeroSection() {
             </div>
           </div>
         </div>
-        <div className="h-full self-stretch opacity-50 xl:opacity-100">
+        <div className="relative h-full self-stretch overflow-hidden opacity-50 xl:opacity-100">
           <video
             autoPlay
             loop
             muted
             playsInline
             aria-label="Scanning animation of a dithered circular glyph"
-            className="size-full overflow-hidden object-cover"
+            className="absolute inset-0 size-full object-cover"
             poster="/assets/images/hero-poster.webp">
             <source src="/assets/videos/hero-video.webm" type="video/webm" />
           </video>
