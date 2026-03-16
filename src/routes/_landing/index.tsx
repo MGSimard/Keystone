@@ -74,30 +74,30 @@ function HeroSection() {
   return (
     <section className="flex min-h-dvh flex-col">
       <div className="grid grow grid-cols-1 items-center [grid-template-areas:'stack'] *:[grid-area:stack] xl:grid-cols-[minmax(0,4fr)_minmax(0,6fr)] *:xl:[grid-area:unset]">
-        <div className="z-1 space-y-16 px-6 py-32 text-center md:px-16 xl:text-start">
+        <div className="z-1 space-y-16 px-12 py-32 text-center md:px-16 xl:text-start">
           <div>
             <span className="mx-auto mb-2 block w-fit bg-landing-primary px-2 py-0.5 font-mono text-landing-background xl:mx-0 *:xl:text-shadow-none">
               TAG LABEL
             </span>
-            <h1 className="text-[clamp(3rem,4vw,4rem)]/tight font-bold tracking-tighter uppercase text-shadow-lg xl:text-shadow-none">
+            <h1 className="text-[clamp(2rem,6vw,4rem)]/tight font-bold tracking-tighter uppercase xl:text-shadow-none dark:text-shadow-lg">
               LOREM IPSUM DOLOR SIT AMET
             </h1>
           </div>
           <div className="space-y-6">
-            <p className="text-balance text-muted-foreground text-shadow-sm xl:text-shadow-none">
+            <p className="text-balance text-muted-foreground xl:text-shadow-none dark:text-shadow-sm">
               Cras dictum dolor vel eros congue, eget commodo dolor bibendum. Ut congue, est id varius congue.
             </p>
-            <p className="text-balance text-shadow-sm xl:text-shadow-none">
+            <p className="text-balance xl:text-shadow-none dark:text-shadow-sm">
               Etiam sed risus nec nibh scelerisque ullamcorper.
             </p>
-            <div className="flex items-center justify-center gap-4 font-mono *:grid *:h-9 *:place-items-center *:px-4 xl:justify-start">
-              <Link to="/" className="bg-landing-primary font-mono text-landing-primary-foreground">
+            <div className="flex items-center justify-center gap-4 *:grid *:h-9 *:place-items-center *:px-4 xl:justify-start">
+              <Link to="/" className="bg-landing-primary font-mono tracking-widest text-landing-primary-foreground">
                 PRIMARY
               </Link>
               <Link
                 to="/"
                 className="text-sm text-muted-foreground text-shadow-md hover:text-landing-primary hover:underline focus-visible:text-landing-primary focus-visible:underline xl:text-shadow-none">
-                LEARN MORE &gt;&gt;&gt;
+                Learn More &gt;&gt;&gt;
               </Link>
             </div>
           </div>
@@ -112,7 +112,6 @@ function HeroSection() {
             className="size-full overflow-hidden object-cover"
             poster="/assets/images/hero-poster.webp">
             <source src="/assets/videos/hero-video.webm" type="video/webm" />
-            <source src="/assets/videos/hero-video-fallback.webm" type="video/webm" />
           </video>
         </div>
       </div>

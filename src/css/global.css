@@ -5,9 +5,9 @@
 @custom-variant dark (&:is(.dark *));
 
 /* UI Debug mode */
-* {
+/* * {
   outline: 1px solid rgba(255, 0, 0, 0.2) !important;
-}
+} */
 
 :root {
   /* Fonts */
@@ -189,6 +189,7 @@
     @apply bg-background font-body text-foreground;
     &:has([data-layout="landing"]) {
       @apply bg-landing-background text-landing-foreground;
+      scrollbar-gutter: stable;
     }
   }
   body {
