@@ -90,8 +90,8 @@ function HeroSection() {
             </p>
             <p>Etiam sed risus nec nibh scelerisque ullamcorper vitae id nisi.</p>
             <div className="flex gap-4 font-mono *:flex *:h-12 *:items-center *:justify-center *:px-4 *:py-2">
-              <Link to="/" className="bg-landing-primary text-landing-primary-foreground">
-                PRIMARY CTA
+              <Link to="/" className="bg-landing-primary font-mono text-landing-primary-foreground">
+                GO ROGUE
               </Link>
               <Link
                 to="/"
@@ -101,7 +101,7 @@ function HeroSection() {
             </div>
           </div>
         </div>
-        <div className="grid translate-z-0 place-items-center bg-[url('/assets/images/placeholder.png')] bg-cover bg-center">
+        <div>
           <video
             autoPlay
             loop
@@ -110,6 +110,7 @@ function HeroSection() {
             className="h-full w-full object-cover"
             poster="/assets/images/hero-poster.webp">
             <source src="/assets/videos/hero-video.webm" type="video/webm" />
+            <source src="/assets/videos/hero-video-fallback.webm" type="video/webm" />
           </video>
         </div>
       </div>
