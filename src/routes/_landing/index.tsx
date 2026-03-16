@@ -73,42 +73,44 @@ function PageHome() {
 function HeroSection() {
   return (
     <section className="flex min-h-dvh flex-col">
-      <div className="grid grow grid-cols-1 [grid-template-areas:'stack'] lg:grid-cols-[minmax(0,40%)_minmax(0,1fr)]">
-        <div className="flex flex-col justify-center gap-16 px-6 pt-32 pb-20 [grid-area:stack] md:px-16 lg:[grid-area:unset]">
+      <div className="grid grow grid-cols-1 items-center [grid-template-areas:'stack'] *:[grid-area:stack] xl:grid-cols-[minmax(0,4fr)_minmax(0,6fr)] *:xl:[grid-area:unset]">
+        <div className="z-1 space-y-16 px-6 py-32 text-center md:px-16 xl:text-start">
           <div>
-            <span className="mb-4 block w-fit bg-landing-primary px-2 py-0.5 font-mono text-landing-background">
+            <span className="mx-auto mb-2 block w-fit bg-landing-primary px-2 py-0.5 font-mono text-landing-background xl:mx-0 *:xl:text-shadow-none">
               TAG LABEL
             </span>
-            <h1 className="text-[clamp(2rem,4vw,4rem)]/tight font-bold tracking-tighter uppercase">
+            <h1 className="text-[clamp(3rem,4vw,4rem)]/tight font-bold tracking-tighter uppercase text-shadow-lg xl:text-shadow-none">
               LOREM IPSUM DOLOR SIT AMET
             </h1>
           </div>
-          <div className="grid gap-6 text-lg">
-            <p className="text-balance text-muted-foreground">
-              Cras dictum dolor vel eros congue, eget commodo dolor bibendum. Ut congue, est id varius congue, purus
-              magna eleifend risus, et ullamcorper orci dui ut dui.
+          <div className="space-y-6">
+            <p className="text-balance text-muted-foreground text-shadow-sm xl:text-shadow-none">
+              Cras dictum dolor vel eros congue, eget commodo dolor bibendum. Ut congue, est id varius congue.
             </p>
-            <p className="text-balance">Etiam sed risus nec nibh scelerisque ullamcorper vitae id nisi.</p>
-            <div className="flex gap-4 font-mono *:flex *:h-9 *:items-center *:justify-center *:px-4 *:py-2">
+            <p className="text-balance text-shadow-sm xl:text-shadow-none">
+              Etiam sed risus nec nibh scelerisque ullamcorper.
+            </p>
+            <div className="flex items-center justify-center gap-4 font-mono *:grid *:h-9 *:place-items-center *:px-4 xl:justify-start">
               <Link to="/" className="bg-landing-primary font-mono text-landing-primary-foreground">
                 PRIMARY
               </Link>
               <Link
                 to="/"
-                className="text-sm text-muted-foreground hover:text-landing-primary hover:underline focus-visible:text-landing-primary focus-visible:underline">
+                className="text-sm text-muted-foreground text-shadow-md hover:text-landing-primary hover:underline focus-visible:text-landing-primary focus-visible:underline xl:text-shadow-none">
                 LEARN MORE &gt;&gt;&gt;
               </Link>
             </div>
           </div>
         </div>
-        <div className="[grid-area:stack] lg:[grid-area:unset]">
+        <div className="relative h-full self-stretch opacity-50 xl:opacity-100">
+          <div className="absolute inset-0 grid place-items-center font-pixel-line text-7xl opacity-20">COMPANY</div>
           <video
             autoPlay
             loop
             muted
             playsInline
             aria-label="Scanning animation of a dithered circular glyph"
-            className="h-full w-full object-cover"
+            className="size-full overflow-hidden object-cover"
             poster="/assets/images/hero-poster.webp">
             <source src="/assets/videos/hero-video.webm" type="video/webm" />
             <source src="/assets/videos/hero-video-fallback.webm" type="video/webm" />

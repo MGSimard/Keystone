@@ -14,7 +14,7 @@ function LayoutLanding() {
   return (
     <>
       <Header />
-      <main data-layout="landing" className="flex-1">
+      <main data-layout="landing">
         <Outlet />
       </main>
       <Footer />
