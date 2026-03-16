@@ -73,7 +73,7 @@ function PageHome() {
 function HeroSection() {
   return (
     <section className="flex min-h-dvh flex-col">
-      <div className="grid grow grid-cols-1 [grid-template-areas:'stack'] md:grid-cols-[minmax(0,40%)_minmax(0,1fr)]">
+      <div className="grid grow grid-cols-1 [grid-template-areas:'stack'] lg:grid-cols-[minmax(0,40%)_minmax(0,1fr)]">
         <div className="flex flex-col justify-center gap-16 px-6 pt-32 pb-20 [grid-area:stack] md:px-16 lg:[grid-area:unset]">
           <div>
             <span className="mb-4 block w-fit bg-landing-primary px-2 py-0.5 font-mono text-landing-background">
