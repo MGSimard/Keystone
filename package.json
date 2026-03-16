@@ -57,11 +57,11 @@
     "eslint-plugin-drizzle": "^0.2.3",
     "highlight.js": "^11.11.1",
     "motion": "^12.36.0",
-    "nitro": "npm:nitro-nightly@3.0.1-20260227-181935-bfbb207c",
+    "nitro": "npm:nitro-nightly@3.0.1-20260315-195328-c31268c6",
     "pg": "^8.20.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
-    "shadcn": "^4.0.6",
+    "shadcn": "^4.0.8",
     "streamdown": "^2.4.0",
     "tailwind-merge": "^3.5.0",
     "tailwindcss": "^4.2.1",
@@ -85,10 +85,10 @@
     "@vitejs/plugin-react": "^6.0.1",
     "babel-plugin-react-compiler": "^1.0.0",
     "dotenv": "^17.3.1",
-    "jsdom": "^28.1.0",
-    "oxfmt": "^0.36.0",
-    "oxlint": "^1.55.0",
-    "oxlint-tsgolint": "^0.16.0",
+    "jsdom": "^29.0.0",
+    "oxfmt": "^0.41.0",
+    "oxlint": "^1.56.0",
+    "oxlint-tsgolint": "^0.17.0",
     "typescript": "^5.9.3",
     "vite": "^8.0.0",
     "vitest": "^4.1.0"
@@ -96,5 +96,5 @@
   "engines": {
     "node": ">=24"
   },
-  "packageManager": "pnpm@10.31.0"
+  "packageManager": "pnpm@10.32.1"
 }
