@@ -2,7 +2,7 @@ export function LandingNoise() {
   // TODO: Decide hierarchy / z-index
   return (
     <svg
-      className="pointer-events-none absolute inset-0 block size-full overflow-hidden select-none"
+      className="pointer-events-none absolute inset-0 z-10 block size-full overflow-hidden opacity-10 select-none"
       xmlns="http://www.w3.org/2000/svg"
       preserveAspectRatio="none"
       aria-hidden>
@@ -17,7 +17,7 @@ export function LandingNoise() {
           </feComponentTransfer>
         </filter>
       </defs>
-      <rect width="100%" height="100%" fill="transparent" filter={`url(#landing-noise-filter)`} opacity="0.1" />
+      <rect width="100%" height="100%" fill="transparent" filter={`url(#landing-noise-filter)`} />
     </svg>
   );
 }
