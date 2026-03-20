@@ -80,7 +80,7 @@ function HeroSection() {
           <span className="mx-auto mb-2 block w-fit bg-landing-primary px-2 py-0.5 font-mono text-landing-background xl:mx-0 *:xl:text-shadow-none">
             TAG LABEL
           </span>
-          <h1 className="mx-auto mb-16 max-w-3xl text-[clamp(2rem,6vw,4rem)]/tight font-bold tracking-tighter uppercase xl:mx-0 xl:text-shadow-none dark:text-shadow-lg">
+          <h1 className="mx-auto mb-8 max-w-3xl text-[clamp(2rem,6vw,4rem)]/tight font-bold tracking-tighter uppercase xl:mx-0 xl:mb-16 xl:text-shadow-none dark:text-shadow-lg">
             LOREM IPSUM DOLOR SIT AMET
           </h1>
           <div className="mx-auto max-w-2xl space-y-6 xl:mx-0">

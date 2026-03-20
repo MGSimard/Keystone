@@ -43,12 +43,15 @@ const sectionLabelVariants = cva("mb-2 inline-block px-2 py-1.5 font-mono leadin
   defaultVariants: { variant: "default" },
 });
 
-const sectionHeadingVariants = cva("mb-8 indent-[-0.05em] font-mono text-7xl font-bold tracking-tighter uppercase", {
-  variants: {
-    variant: {
-      default: "text-landing-primary",
-      primary: "text-landing-background",
+const sectionHeadingVariants = cva(
+  "mb-8 indent-[-0.05em] font-mono text-[clamp(2rem,6vw,4rem)]/tight font-bold tracking-tighter",
+  {
+    variants: {
+      variant: {
+        default: "text-landing-primary",
+        primary: "text-landing-background",
+      },
     },
-  },
-  defaultVariants: { variant: "default" },
-});
+    defaultVariants: { variant: "default" },
+  }
+);
