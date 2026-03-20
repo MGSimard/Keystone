@@ -1,10 +1,8 @@
-const FILTER_ID = "landing-noise-filter";
-
-/** SVG feTurbulence grain; Tailwind for stacking (above in-flow content, dark-only). */
 export function LandingNoise() {
+  // TODO: Decide hierarchy / z-index
   return (
     <svg
-      className="pointer-events-none absolute inset-0 z-20 block size-full overflow-hidden opacity-20"
+      className="pointer-events-none absolute inset-0 block size-full overflow-hidden select-none"
       xmlns="http://www.w3.org/2000/svg"
       preserveAspectRatio="none"
       aria-hidden>
@@ -19,7 +17,7 @@ export function LandingNoise() {
           </feComponentTransfer>
         </filter>
       </defs>
-      <rect width="100%" height="100%" fill="transparent" filter={`url(#landing-noise-filter)`} opacity="0.45" />
+      <rect width="100%" height="100%" fill="transparent" filter={`url(#landing-noise-filter)`} opacity="0.1" />
     </svg>
   );
 }
