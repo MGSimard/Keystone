@@ -135,73 +135,46 @@ function HeroSection() {
 
 function BenefitsSection() {
   return (
-    <Section id="benefits">
-      <span className="mb-2 inline-block bg-landing-primary px-2 py-1.5 font-mono leading-none text-landing-background uppercase tabular-nums">
-        01 &gt;&gt; BENEFITS
-      </span>
-      <h2 className="indent-[-0.05em] font-mono text-7xl font-bold tracking-tighter text-landing-primary">HEADING</h2>
-      <p>Focus on how it helps user instead of what features it has</p>
+    <Section id="benefits" label="01 &gt;&gt; BENEFITS" heading="BENEFITS HEADING">
+      <p>Focus on how it helps user instead of what features it has.</p>
     </Section>
   );
 }
 
 function HowItWorksSection() {
   return (
-    <Section id="how-it-works" className="bg-landing-primary">
-      <span className="mb-2 inline-block bg-background px-2 py-1.5 font-mono leading-none text-landing-primary uppercase tabular-nums">
-        02 &gt;&gt; HOW IT WORKS
-      </span>
-      <h2 className="indent-[-0.05em] font-mono text-7xl font-bold tracking-tighter text-landing-background">
-        HEADING
-      </h2>
-      <p>Explain how to get started in 3 simple steps</p>
-      <ol className="grid">
-        <li>
-          <h3>Step 1</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
-        </li>
-        <li>
-          <h3>Step 2</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
-        </li>
-        <li>
-          <h3>Step 3</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
-        </li>
-      </ol>
+    <Section id="how-it-works" variant="primary" label="02 &gt;&gt; HOW IT WORKS" heading="HOW IT WORKS HEADING">
+      <p>Explain how to get started in 3 simple steps.</p>
     </Section>
   );
 }
 
 function PricingSection() {
   return (
-    <Section id="pricing">
-      <span className="mb-2 inline-block bg-landing-primary px-2 py-1.5 font-mono leading-none text-landing-background uppercase tabular-nums">
-        03 &gt;&gt; PRICING
-      </span>
-      <h2 className="indent-[-0.05em] font-mono text-7xl font-bold tracking-tighter text-landing-primary">HEADING</h2>
+    <Section id="pricing" label="03 &gt;&gt; PRICING" heading="PRICING HEADING">
+      <p>
+        Helps users choose by showcasing difference in plans, don't hide anything. Add CTA to all plans and highlight
+        the middle plan to guide users.
+      </p>
     </Section>
   );
 }
 
 function TestimonialsSection() {
   return (
-    <Section id="testimonials">
-      <span className="mb-2 inline-block bg-landing-primary px-2 py-1.5 font-mono leading-none text-landing-background uppercase tabular-nums">
-        04 &gt;&gt; TESTIMONIALS
-      </span>
-      <h2 className="indent-[-0.05em] font-mono text-7xl font-bold tracking-tighter text-landing-primary">HEADING</h2>
+    <Section id="testimonials" label="04 &gt;&gt; TESTIMONIALS" heading="TESTIMONIALS HEADING">
+      <p>
+        Place next to pricing to help with conversions. People feel relieved to see other people happy with their
+        purchase.
+      </p>
     </Section>
   );
 }
 
 function FAQSection() {
   return (
-    <Section id="faq">
-      <span className="mb-2 inline-block bg-landing-primary px-2 py-1.5 font-mono leading-none text-landing-background uppercase tabular-nums">
-        05 &gt;&gt; FREQUENTLY ASKED QUESTIONS
-      </span>
-      <h2 className="indent-[-0.05em] font-mono text-7xl font-bold tracking-tighter text-landing-primary">INTEL</h2>
+    <Section id="faq" label="05 &gt;&gt; FREQUENTLY ASKED QUESTIONS" heading="FAQ HEADING">
+      <p>Address some major questions to help people make the final call. (e.g., Cancellation/Refund policies, etc.)</p>
       <Accordion items={ACCORDION_ITEMS} />
     </Section>
   );
@@ -241,8 +214,8 @@ const ACCORDION_ITEMS = [
 
 function CTASection() {
   return (
-    <Section id="cta">
-      <h2>CTA Section</h2>
+    <Section id="cta" label="06 &gt;&gt; CTA" heading="CTA Heading">
+      <p>Highlight it, make it stand out.</p>
     </Section>
   );
 }
