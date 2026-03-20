@@ -174,12 +174,12 @@ function TestimonialsSection() {
 function FAQSection() {
   return (
     <Section id="faq" label="05 &gt;&gt; FREQUENTLY ASKED QUESTIONS" heading="FAQ HEADING">
-      <p className="mb-2 text-muted-foreground">
+      <p className="mb-2 text-wrap text-muted-foreground">
         Can't find what you're looking for?{" "}
         <Link
           to="/"
-          className="inline-flex items-center gap-1 font-mono underline hover:text-landing-primary focus-visible:text-landing-primary">
-          Contact us &gt;&gt;&gt;
+          className="font-mono text-xs font-medium tracking-widest whitespace-nowrap underline hover:text-landing-primary focus-visible:text-landing-primary">
+          CONTACT US &gt;&gt;&gt;
         </Link>
       </p>
       <Accordion items={ACCORDION_ITEMS} />
