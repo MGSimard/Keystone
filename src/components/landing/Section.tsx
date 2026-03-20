@@ -37,7 +37,7 @@ const sectionLabelVariants = cva("mb-2 inline-block px-2 py-1.5 font-mono leadin
   variants: {
     variant: {
       default: "bg-landing-primary text-landing-background",
-      primary: "bg-background text-landing-primary",
+      primary: "bg-landing-background text-landing-primary",
     },
   },
   defaultVariants: { variant: "default" },

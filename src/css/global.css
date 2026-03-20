@@ -62,7 +62,7 @@
   --invert: var(--color-zinc-900);
   --invert-foreground: var(--color-zinc-50);
   /* Landing Layout Tokens */
-  --landing-background: oklch(0.9568 0.0029 128.49);
+  --landing-background: oklch(0.95 0.0027 286.35);
   --landing-foreground: oklch(0.2603 0 0);
   --landing-primary: oklch(0.56 0.1867 24.67);
   --landing-primary-foreground: oklch(0.9568 0.0029 128.49);
@@ -111,7 +111,7 @@
   --invert: var(--color-zinc-700);
   --invert-foreground: var(--color-zinc-50);
   /* Landing Page Tokens */
-  --landing-background: oklch(0.16 0.0017 17.33);
+  --landing-background: oklch(0.16 0.0017 196.99);
   --landing-foreground: oklch(0.9568 0.0029 128.49);
   --landing-primary: oklch(0.56 0.1867 24.67);
   --landing-primary-foreground: oklch(0.9568 0.0029 128.49);
@@ -218,9 +218,8 @@
     text-rendering: optimizeLegibility;
     line-height: 1.5;
     &:has([data-layout="landing"]) {
-      @apply text-landing-foreground;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1' numOctaves='3'/%3E%3CfeColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/%3E%3CfeComponentTransfer%3E%3CfeFuncR type='linear' slope='1' intercept='-0.2'/%3E%3CfeFuncG type='linear' slope='1' intercept='-0.2'/%3E%3CfeFuncB type='linear' slope='1' intercept='-0.2'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");
-      background-blend-mode: hard-light;
+      @apply bg-landing-background text-landing-foreground;
+      /* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1' numOctaves='3'/%3E%3CfeColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/%3E%3CfeComponentTransfer%3E%3CfeFuncR type='linear' slope='1' intercept='-0.2'/%3E%3CfeFuncG type='linear' slope='1' intercept='-0.2'/%3E%3CfeFuncB type='linear' slope='1' intercept='-0.2'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.2'/%3E%3C/svg%3E"); */
     }
     html.dark &:has([data-layout="landing"]) {
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncR type='linear' slope='2.2' intercept='-0.6'/%3E%3CfeFuncG type='linear' slope='2.2' intercept='-0.6'/%3E%3CfeFuncB type='linear' slope='2.2' intercept='-0.6'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.1'/%3E%3C/svg%3E");

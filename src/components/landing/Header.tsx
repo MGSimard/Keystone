@@ -22,7 +22,7 @@ export function Header() {
       <header
         className={cn(
           "fixed inset-x-0 top-0 z-10 px-6 font-mono uppercase shadow-sm shadow-transparent transition-all duration-150 md:px-8",
-          isScrolled && "bg-background shadow-black/10"
+          isScrolled && "bg-landing-background shadow-black/10"
         )}>
         <nav className="mx-auto flex h-16 max-w-400 items-center gap-12">
           <ul className="flex items-center gap-8 font-light [&_a]:hover:underline [&_a]:focus-visible:underline">
