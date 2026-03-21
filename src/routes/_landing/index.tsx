@@ -154,14 +154,12 @@ function FAQSection() {
         <div>
           <HeadingLabel label="05 / FREQUENTLY ASKED QUESTIONS" />
           <Heading heading="FAQ HEADING" />
-          <p className="mb-2 text-wrap text-muted-foreground">
-            Can't find what you're looking for?{" "}
-            <Link
-              to="/"
-              className="font-mono text-xs font-medium tracking-widest whitespace-nowrap underline hover:text-landing-primary focus-visible:text-landing-primary">
-              CONTACT US &gt;&gt;&gt;
-            </Link>
-          </p>
+          <p className="mb-2 text-wrap text-muted-foreground">Can't find what you're looking for? </p>
+          <Link
+            to="/"
+            className="font-mono text-xs font-medium tracking-widest whitespace-nowrap text-muted-foreground hover:text-foreground hover:underline focus-visible:text-foreground focus-visible:underline">
+            CONTACT US &gt;&gt;&gt;
+          </Link>
         </div>
         <Accordion items={ACCORDION_ITEMS} className="lg:col-span-2" />
       </div>
@@ -203,10 +201,10 @@ const ACCORDION_ITEMS = [
 
 function CTASection() {
   return (
-    <Section id="cta">
+    <Section id="cta" className="bg-landing-primary">
       <div className="mx-auto w-full max-w-360">
-        <HeadingLabel label="06 / CTA" />
-        <Heading heading="CTA Heading" />
+        <HeadingLabel label="06 / CTA" className="bg-landing-background text-landing-primary" />
+        <Heading heading="CTA Heading" className="text-landing-foreground" />
         <p className="text-muted-foreground">Highlight it, make it stand out.</p>
       </div>
     </Section>
