@@ -150,18 +150,20 @@ function TestimonialsSection() {
 function FAQSection() {
   return (
     <Section id="faq">
-      <div className="mx-auto w-full max-w-360">
-        <HeadingLabel label="05 / FREQUENTLY ASKED QUESTIONS" />
-        <Heading heading="FAQ HEADING" />
-        <p className="mb-2 text-wrap text-muted-foreground">
-          Can't find what you're looking for?{" "}
-          <Link
-            to="/"
-            className="font-mono text-xs font-medium tracking-widest whitespace-nowrap underline hover:text-landing-primary focus-visible:text-landing-primary">
-            CONTACT US &gt;&gt;&gt;
-          </Link>
-        </p>
-        <Accordion items={ACCORDION_ITEMS} />
+      <div className="mx-auto grid w-full max-w-360 gap-8 lg:grid-cols-3">
+        <div>
+          <HeadingLabel label="05 / FREQUENTLY ASKED QUESTIONS" />
+          <Heading heading="FAQ HEADING" />
+          <p className="mb-2 text-wrap text-muted-foreground">
+            Can't find what you're looking for?{" "}
+            <Link
+              to="/"
+              className="font-mono text-xs font-medium tracking-widest whitespace-nowrap underline hover:text-landing-primary focus-visible:text-landing-primary">
+              CONTACT US &gt;&gt;&gt;
+            </Link>
+          </p>
+        </div>
+        <Accordion items={ACCORDION_ITEMS} className="lg:col-span-2" />
       </div>
     </Section>
   );
