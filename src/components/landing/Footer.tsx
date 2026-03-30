@@ -75,7 +75,7 @@ export function Footer() {
           </li>
         </ul>
         <div className="col-span-4 font-mono text-xs text-muted-foreground uppercase">
-          <span>© TanStack AWS. All rights reserved.</span>
+          <span>© Keystone. All rights reserved.</span>
         </div>
       </div>
     </footer>
