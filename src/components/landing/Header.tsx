@@ -4,6 +4,7 @@ import { MobileNavDropdown } from "@/components/landing/MobileNavDropdown";
 import { ThemeSelect } from "@/components/ThemeSelect";
 import { Button } from "@/components/shadcnui/button";
 import { cn } from "@/lib/utils";
+import { WordMark } from "@/components/BrandIcons";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -27,7 +28,9 @@ export function Header() {
         <nav className="mx-auto flex h-16 max-w-400 items-center gap-12">
           <ul className="flex items-center gap-8 font-light [&_a]:hover:underline [&_a]:focus-visible:underline">
             <li>
-              <Link to="/">LOGO</Link>
+              <Link to="/">
+                <WordMark />
+              </Link>
             </li>
             <li className="hidden md:block">
               <Link to="/">FEATURES</Link>
