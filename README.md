@@ -5,8 +5,6 @@
 ## Task List
 
 - [ ] Use PNG for landing noise & add to prefetch tag
-- [ ] Edit the KEYSTONE wordmark for proper kerning
-- [ ] Do do the same for logomark
 - [ ] Add favicons & rest of head/meta content
 - [ ] ...
 - [ ] ...

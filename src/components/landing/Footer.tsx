@@ -1,13 +1,18 @@
 import { Link } from "@tanstack/react-router";
 import { Separator } from "@/components/shadcnui/separator";
+import { WordMark } from "@/components/BrandIcons";
 
 export function Footer() {
   return (
-    <footer className="px-6 md:px-8">
+    <footer className="relative overflow-hidden px-6 py-16 md:px-8">
       <div className="mx-auto grid max-w-400 grid-cols-4">
         <div className="col-span-4 md:col-span-1">
-          <div>Logo</div>
-          <div>Social Icons</div>
+          <WordMark />
+          <ul className="flex items-center gap-12">
+            <li>X</li>
+            <li>I</li>
+            <li>L</li>
+          </ul>
         </div>
         <div>
           Products
