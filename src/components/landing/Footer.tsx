@@ -14,7 +14,7 @@ export function Footer() {
       <div className="bg-slashed h-24" aria-hidden />
       <div className="px-6 pt-16 pb-8 md:px-8">
         <div className="mx-auto grid max-w-400 space-y-4">
-          <div className="grid grid-cols-1 gap-12 sm:grid-cols-3 lg:grid-cols-4">
+          <div className="mb-8 grid grid-cols-1 gap-12 sm:grid-cols-3 lg:grid-cols-4">
             <div className="col-span-full w-fit lg:col-span-1">
               <WordMark className="mb-8" aria-label="KEYSTONE Logo" />
               <ul
