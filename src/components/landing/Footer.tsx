@@ -16,8 +16,10 @@ export function Footer() {
         <div className="mx-auto grid max-w-400 space-y-4">
           <div className="grid grid-cols-1 gap-12 sm:grid-cols-3 lg:grid-cols-4">
             <div className="col-span-full w-fit lg:col-span-1">
-              <WordMark className="mb-4" aria-label="KEYSTONE Logo" />
-              <ul className="flex items-center justify-between gap-2" aria-label="Socials">
+              <WordMark className="mb-8" aria-label="KEYSTONE Logo" />
+              <ul
+                className="flex flex-wrap items-center justify-between gap-4 *:shrink-0 [&_a]:hover:opacity-90 [&_a]:focus-visible:opacity-90"
+                aria-label="Socials">
                 <li>
                   <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                     <IconBrandFacebookFilled className="size-6" />
@@ -41,8 +43,8 @@ export function Footer() {
               </ul>
             </div>
             <div>
-              <h2 className="font-mono uppercase tabular-nums">Products</h2>
-              <ul className="capitalize">
+              <h2 className="mb-2 font-mono uppercase tabular-nums">PRODUCTS</h2>
+              <ul className="space-y-2 capitalize [&_a]:hover:underline [&_a]:focus-visible:underline">
                 <li>
                   <Link to="/">Product 1</Link>
                 </li>
@@ -55,8 +57,8 @@ export function Footer() {
               </ul>
             </div>
             <div>
-              <h2 className="font-mono uppercase">Support</h2>
-              <ul className="capitalize">
+              <h2 className="mb-2 font-mono uppercase">SUPPORT</h2>
+              <ul className="space-y-2 capitalize [&_a]:hover:underline [&_a]:focus-visible:underline">
                 <li>
                   <Link to="/">Support 1</Link>
                 </li>
@@ -69,22 +71,22 @@ export function Footer() {
               </ul>
             </div>
             <div>
-              <h2 className="font-mono uppercase">Help Center</h2>
-              <ul className="capitalize">
+              <h2 className="mb-2 font-mono uppercase">COMPANY</h2>
+              <ul className="space-y-2 capitalize [&_a]:hover:underline [&_a]:focus-visible:underline">
                 <li>
-                  <Link to="/">Help Center 1</Link>
+                  <Link to="/">About Keystone</Link>
                 </li>
                 <li>
-                  <Link to="/">Help Center 2</Link>
+                  <Link to="/">Our Team</Link>
                 </li>
                 <li>
-                  <Link to="/">Help Center 3</Link>
+                  <Link to="/">Media Kit</Link>
                 </li>
               </ul>
             </div>
           </div>
           <Separator />
-          <ul className="flex flex-wrap items-center gap-4 text-xs text-muted-foreground capitalize [&_a]:hover:text-primary [&_a]:hover:underline [&_a]:focus-visible:underline">
+          <ul className="flex flex-wrap items-center gap-4 text-xs text-muted-foreground capitalize [&_a]:hover:text-foreground [&_a]:hover:underline [&_a]:focus-visible:text-foreground [&_a]:focus-visible:underline">
             <li>
               <Link to="/">Privacy Policy</Link>
             </li>
