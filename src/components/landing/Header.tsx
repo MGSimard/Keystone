@@ -26,7 +26,7 @@ export function Header() {
           isScrolled && "border-border bg-landing-background shadow-black/10"
         )}>
         <nav className="mx-auto flex h-16 max-w-400 items-center gap-12">
-          <Link to="/">
+          <Link to="/" className="shrink-0">
             <WordMark />
           </Link>
 
