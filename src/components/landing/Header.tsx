@@ -1,15 +1,24 @@
 import { useCallback, useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { MobileNavDropdown } from "@/components/landing/MobileNavDropdown";
-import { ThemeSelect } from "@/components/ThemeSelect";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuLabel,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/shadcnui/dropdown-menu";
 import { Button } from "@/components/shadcnui/button";
-import { cn } from "@/lib/utils";
+import { ThemeSelect } from "@/components/ThemeSelect";
 import { WordMark } from "@/components/BrandIcons";
+import { IconMenu2 } from "@tabler/icons-react";
+import { cn } from "@/lib/utils";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
 
-  // Use sentinel that fires on intersection to darken header background on scroll
+  // Scroll sentinel for header background opacity
   const refCallback = useCallback((el: HTMLDivElement | null) => {
     if (!el) return;
     const obs = new IntersectionObserver(([entry]) => entry && setIsScrolled(!entry.isIntersecting), { threshold: 0 });
@@ -29,9 +38,7 @@ export function Header() {
           <Link to="/" className="shrink-0">
             <WordMark />
           </Link>
-
           <div className="ml-auto flex shrink-0 items-center gap-4 *:shrink-0">
-            <ThemeSelect />
             <Button
               variant="outline"
               nativeButton={false}
@@ -42,7 +49,27 @@ export function Header() {
             <Button nativeButton={false} className="rounded-none tracking-widest" render={<Link to="/dashboard" />}>
               ACCESS
             </Button>
-            <MobileNavDropdown />
+            <DropdownMenu>
+              <DropdownMenuTrigger
+                render={
+                  <Button variant="outline" size="icon" className="rounded-none" aria-label="Navigation Menu">
+                    <IconMenu2 />
+                  </Button>
+                }
+              />
+              <DropdownMenuContent className="rounded-none **:rounded-none">
+                <DropdownMenuGroup className="space-y-2">
+                  <DropdownMenuLabel>NAVIGATION</DropdownMenuLabel>
+                  <DropdownMenuItem>FEATURES</DropdownMenuItem>
+                  <DropdownMenuItem>PRICING</DropdownMenuItem>
+                  <DropdownMenuItem>CONTACT</DropdownMenuItem>
+                </DropdownMenuGroup>
+                <DropdownMenuSeparator />
+                <DropdownMenuGroup>
+                  <DropdownMenuItem closeOnClick={false} render={<ThemeSelect />} />
+                </DropdownMenuGroup>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
         </nav>
       </header>
