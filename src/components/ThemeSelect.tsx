@@ -1,46 +1,16 @@
 import { useTheme } from "@/components/ThemeProvider";
-import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/shadcnui/tooltip";
 import { Button } from "@/components/shadcnui/button";
-import { IconBrightnessDown, IconDeviceDesktop, IconMoonFilled } from "@tabler/icons-react";
-
-const NEXT_THEME = {
-  light: "dark",
-  dark: "system",
-  system: "light",
-} as const;
 
 export function ThemeSelect() {
-  const { theme, setTheme } = useTheme();
+  const { theme, cycleTheme } = useTheme();
 
   return (
-    <Tooltip
-      disableHoverablePopup
-      onOpenChange={(_open, eventDetails) => {
-        if (eventDetails.reason === "trigger-press") {
-          eventDetails.cancel();
-        }
-      }}>
-      <TooltipTrigger
-        render={
-          <Button
-            type="button"
-            size="icon"
-            variant="ghost"
-            className="rounded-none"
-            onClick={() => setTheme(NEXT_THEME[theme])}>
-            <span className="grid [grid-template-areas:'stack']">
-              <IconBrightnessDown data-theme-icon="light" className="[grid-area:stack]" />
-              <IconMoonFilled data-theme-icon="dark" className="[grid-area:stack]" />
-              <IconDeviceDesktop data-theme-icon="system" className="[grid-area:stack]" />
-            </span>
-          </Button>
-        }
-      />
-      <TooltipContent>
-        <p className="font-mono">
-          SWITCH THEME (<span className="capitalize">{theme}</span>)
-        </p>
-      </TooltipContent>
-    </Tooltip>
+    <Button
+      type="button"
+      variant="outline"
+      className="rounded-none font-mono tracking-widest uppercase"
+      onClick={cycleTheme}>
+      Theme: <span className="capitalize">{theme}</span>
+    </Button>
   );
 }

@@ -11,19 +11,20 @@
  */
 import { createContext, use, useEffect, useState, useSyncExternalStore } from "react";
 
-type ResolvedTheme = "light" | "dark";
-export type Theme = ResolvedTheme | "system";
+export const THEMES = ["light", "dark", "system"] as const;
+export type Theme = (typeof THEMES)[number];
+type ResolvedTheme = Extract<Theme, "light" | "dark">;
 
 interface ThemeContextTypes {
   theme: Theme;
   resolvedTheme: ResolvedTheme;
   setTheme: (theme: Theme) => void;
+  cycleTheme: () => void;
 }
 
 const ThemeContext = createContext<ThemeContextTypes | null>(null);
 
 const STORAGE_KEY = "theme";
-export const THEMES = ["light", "dark", "system"] as const;
 const isBrowser = typeof window !== "undefined";
 
 interface ThemeProviderProps {
@@ -33,7 +34,7 @@ interface ThemeProviderProps {
 }
 
 export function ThemeProvider({ children, defaultTheme = "system", storageKey = STORAGE_KEY }: ThemeProviderProps) {
-  const [theme, setTheme] = useState<Theme>(() => {
+  const [theme, setThemeState] = useState<Theme>(() => {
     if (!isBrowser) return defaultTheme;
     try {
       const stored = localStorage.getItem(storageKey);
@@ -56,9 +57,9 @@ export function ThemeProvider({ children, defaultTheme = "system", storageKey = 
   const systemTheme = useSyncExternalStore(subscribeToSystemTheme, getSystemResolvedTheme, () => fallbackResolvedTheme);
   const resolvedTheme: ResolvedTheme = theme === "system" ? systemTheme : theme;
 
-  const updateTheme = (newTheme: Theme) => {
+  function setTheme(newTheme: Theme) {
     const enableTransitions = disableTransitions();
-    setTheme(newTheme);
+    setThemeState(newTheme);
     try {
       localStorage.setItem(storageKey, newTheme);
     } catch (error) {
@@ -67,7 +68,13 @@ export function ThemeProvider({ children, defaultTheme = "system", storageKey = 
     requestAnimationFrame(() => {
       requestAnimationFrame(enableTransitions);
     });
-  };
+  }
+
+  function cycleTheme() {
+    const themeIndex = THEMES.indexOf(theme);
+    const nextTheme = THEMES[(themeIndex + 1) % THEMES.length] ?? THEMES[0];
+    setTheme(nextTheme);
+  }
 
   useEffect(() => {
     const root = document.documentElement;
@@ -80,7 +87,7 @@ export function ThemeProvider({ children, defaultTheme = "system", storageKey = 
     const handleStorageChange = (e: StorageEvent) => {
       if (e.key === storageKey && e.newValue && isValidTheme(e.newValue)) {
         const enableTransitions = disableTransitions();
-        setTheme(e.newValue);
+        setThemeState(e.newValue);
         requestAnimationFrame(() => {
           requestAnimationFrame(enableTransitions);
         });
@@ -91,9 +98,7 @@ export function ThemeProvider({ children, defaultTheme = "system", storageKey = 
     return () => window.removeEventListener("storage", handleStorageChange);
   }, [storageKey]);
 
-  const contextValue = { theme, resolvedTheme, setTheme: updateTheme };
-
-  return <ThemeContext value={contextValue}>{children}</ThemeContext>;
+  return <ThemeContext value={{ theme, resolvedTheme, setTheme, cycleTheme }}>{children}</ThemeContext>;
 }
 
 export function useTheme() {

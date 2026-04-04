@@ -6,11 +6,9 @@ import {
   DropdownMenuGroup,
   DropdownMenuLabel,
   DropdownMenuItem,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/shadcnui/dropdown-menu";
 import { Button } from "@/components/shadcnui/button";
-import { ThemeSelect } from "@/components/ThemeSelect";
 import { WordMark } from "@/components/BrandIcons";
 import { IconMenu2 } from "@tabler/icons-react";
 import { cn } from "@/lib/utils";
@@ -64,10 +62,6 @@ export function Header() {
                   <DropdownMenuItem render={<Link to="/" />}>FEATURES</DropdownMenuItem>
                   <DropdownMenuItem render={<Link to="/" />}>PRICING</DropdownMenuItem>
                   <DropdownMenuItem render={<Link to="/" />}>CONTACT</DropdownMenuItem>
-                </DropdownMenuGroup>
-                <DropdownMenuSeparator />
-                <DropdownMenuGroup>
-                  <DropdownMenuItem closeOnClick={false} render={<ThemeSelect />} />
                 </DropdownMenuGroup>
               </DropdownMenuContent>
             </DropdownMenu>
